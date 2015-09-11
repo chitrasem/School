@@ -15,7 +15,7 @@ public class BookApp {
 
 		try {
 			Book book = new Book();
-			book.setName("JFLSDJF");
+			book.setName("Book 2");
 			bookService.save(book);
 		} catch (DataAccessException ex) {
 			System.out.println("Spring dao exception handled "+ex.getMessage());
