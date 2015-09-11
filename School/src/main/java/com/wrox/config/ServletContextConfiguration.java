@@ -37,7 +37,7 @@ import java.util.List;
 @Configuration
 @EnableWebMvc
 @ComponentScan(
-        basePackages = "com.wrox.site",
+        basePackages = {"com.wrox.site", "com.chitra.school"},
         useDefaultFilters = false,
         includeFilters = @ComponentScan.Filter(Controller.class)
 )

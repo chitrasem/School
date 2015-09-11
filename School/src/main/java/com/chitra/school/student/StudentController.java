@@ -1,4 +1,4 @@
-package com.chitra.sms.student;
+package com.chitra.school.student;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
