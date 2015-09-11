@@ -10,10 +10,8 @@ public class DashboardController {
 	@RequestMapping(value = "dashboard")
 	public ModelAndView showDashboard()
 	{
-		ModelAndView mv = new ModelAndView();
-		
-		mv.setViewName("dashboard");
-		
+		ModelAndView mv = new ModelAndView();		
+		mv.setViewName("dashboard");		
 		return mv;
 	}
 }
