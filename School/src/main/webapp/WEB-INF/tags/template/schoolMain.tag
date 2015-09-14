@@ -16,7 +16,7 @@
 
         <link rel="shortcut icon" href="resource/images/favicon_1.ico">
     
-    	<title>School <c:out value="${fn:trim(htmlTitle)}" /></title>
+    	<title>School ||  <c:out value="${fn:trim(htmlTitle)}" /></title>
 
         <!-- Base Css Files -->
         <link href="<c:url value="/resource/css/bootstrap.min.css" />" rel="stylesheet" />
@@ -46,8 +46,27 @@
         <jsp:invoke fragment="headContent" />
     </head>
     <body>
+    	
     	<jsp:invoke fragment="navigationContent" />
     	<%-- <h2><c:out value="${fn:trim(bodyTitle)}" /></h2> --%>
+    	 <script>
+	            var resizefunc = [];
+	        </script>
+	        <!-- jQuery  -->
+	        <script src="<c:url value="/resource/js/jquery.min.js" />"></script>
+	        <script src="<c:url value="/resource/js/bootstrap.min.js" />"></script>
+	        <script src="<c:url value="/resource/js/waves.js" />"></script>
+	        <script src="<c:url value="/resource/js/wow.min.js" />"></script>
+	        <script src="<c:url value="/resource/js/jquery.nicescroll.js" />" type="text/javascript"></script>
+	        <script src="<c:url value="/resource/js/jquery.scrollTo.min.js" />"></script>
+	        <script src="<c:url value="/resource/assets/jquery-detectmobile/detect.js" />"></script>
+	        <script src="<c:url value="/resource/assets/fastclick/fastclick.js" />"></script>
+	        <script src="<c:url value="/resource/assets/jquery-slimscroll/jquery.slimscroll.js" />"></script>
+	        <script src="<c:url value="/resource/assets/jquery-blockui/jquery.blockUI.js" />"></script>
+	
+	
+	        <!-- CUSTOM JS -->
+	        <script src="<c:url value="/resource/js/jquery.app.js" />"></script>
         <jsp:doBody />
     </body>
 </html>

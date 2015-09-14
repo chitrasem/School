@@ -19,6 +19,12 @@
                                 </ol>
                             </div>
                         </div>
+                        <div>                       
+                        	<span class="button btn"><a href="<c:url value="/student/add" />">Add</a></span>
+	                        <div id="stu_result">
+	                        
+	                        </div>
+                        </div>
                         
                         
                         </div>
@@ -30,5 +36,6 @@
             <!-- ============================================================== -->
             <!-- End Right content here -->
             <!-- ============================================================== -->
+            <script src="<c:url value="/resource/js/school/student.js" />"></script>
 
 </template:schoolBasic>

@@ -1,5 +1,6 @@
 package com.chitra.school.student;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,6 +27,19 @@ public class StudentController {
 	{
 		return "student";
 	}
+	
+	@RequestMapping(value="add", method=RequestMethod.GET)
+	public void addStudent(){
+		Student s = new Student();
+		s.setFirstName("Randa");
+		s.setLastName("Sor");
+		s.setSex("Female");
+		s.setBirthDate(new Date());
+		
+		studentDao.save(s);
+		
+	}
+	
 	@ResponseBody
 	@RequestMapping(value="data", method=RequestMethod.GET)
 	public Map<String, Object> listStudent(){
