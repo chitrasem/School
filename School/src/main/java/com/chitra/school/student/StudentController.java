@@ -10,6 +10,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.chitra.school.config.DBConfig;
@@ -25,11 +26,15 @@ public class StudentController {
 	@RequestMapping(value="show", method = RequestMethod.GET)
 	public String getStudent()
 	{
-		return "student";
+		
+		return "student/list_student";
 	}
-	
 	@RequestMapping(value="add", method=RequestMethod.GET)
-	public void addStudent(){
+	public String addStudent(){
+		return "student/add_student";		
+	}
+	@RequestMapping(value="add", method=RequestMethod.POST)
+	public void addStudent(@RequestParam("firstName") String firstName){
 		Student s = new Student();
 		s.setFirstName("Randa");
 		s.setLastName("Sor");

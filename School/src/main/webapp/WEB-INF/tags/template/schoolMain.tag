@@ -31,6 +31,9 @@
 
         <!-- Waves-effect -->
         <link href="<c:url value="/resource/css/waves-effect.css" />"rel="stylesheet">
+        
+        <!--Form Wizard-->
+        <link rel="stylesheet" type="text/css" href="<c:url value="/resource/assets/form-wizard/jquery.steps.css" />"/>
 
         <!-- Custom Files -->
         <link href="<c:url value="/resource/css/helper.css" />" rel="stylesheet"  type="text/css" />
@@ -63,6 +66,8 @@
 	        <script src="<c:url value="/resource/assets/fastclick/fastclick.js" />"></script>
 	        <script src="<c:url value="/resource/assets/jquery-slimscroll/jquery.slimscroll.js" />"></script>
 	        <script src="<c:url value="/resource/assets/jquery-blockui/jquery.blockUI.js" />"></script>
+	        
+	        
 	
 	
 	        <!-- CUSTOM JS -->

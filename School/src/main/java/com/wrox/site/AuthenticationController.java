@@ -69,7 +69,7 @@ public class AuthenticationController
 
     private ModelAndView getTicketRedirect()
     {
-        return new ModelAndView(new RedirectView("/ticket/list", true, false));
+        return new ModelAndView(new RedirectView("/dashboard/list", true, false));
     }
 
     public static class Form
