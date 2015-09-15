@@ -34,7 +34,16 @@
         
         <!--Form Wizard-->
         <link rel="stylesheet" type="text/css" href="<c:url value="/resource/assets/form-wizard/jquery.steps.css" />"/>
-
+		
+		<!-- Modal -->
+		<link href="<c:url value="/resource/assets/modal-effect/css/component.css" />" rel="stylesheet">
+		
+        <!-- X-editable css -->
+        <link type="text/css" href="<c:url value="/resource/assets/bootstrap3-editable/bootstrap-editable.css" />" rel="stylesheet">
+        
+        <link href="<c:url value="/resource/assets/timepicker/bootstrap-timepicker.min.css" />" rel="stylesheet" />
+        <link href="<c:url value="/resource/assets/timepicker/bootstrap-datepicker.min.css" />" rel="stylesheet" />
+        
         <!-- Custom Files -->
         <link href="<c:url value="/resource/css/helper.css" />" rel="stylesheet"  type="text/css" />
         <link href="<c:url value="/resource/css/style.css" />" rel="stylesheet"  type="text/css" />

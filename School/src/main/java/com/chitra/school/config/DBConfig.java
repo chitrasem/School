@@ -33,15 +33,21 @@ public class DBConfig {
 	@Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("org.h2.Driver");
-        dataSource.setUrl("jdbc:h2:tcp://localhost/~/test");
-        dataSource.setUsername("sa");
-        dataSource.setPassword("123456");
+        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/school");
+        dataSource.setUsername("root");
+        dataSource.setPassword("");
+        /*dataSource.setDriverClassName("org.postgresql.Driver");
+        dataSource.setUrl("jdbc:postgresql://ec2-50-16-229-89.compute-1.amazonaws.com:5432/daa1lm2t562kb4");
+        
+        dataSource.setUsername("jwwbusbbzmnmsv");
+        dataSource.setPassword("zU7yMkRTtqioqSPgo4MdsFXVji");*/
         return dataSource;
     }
 	private Map<String,?> jpaProperties() {
         Map<String,String> jpaPropertiesMap = new HashMap<String,String>();
-        jpaPropertiesMap.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
+        jpaPropertiesMap.put("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
+        //jpaPropertiesMap.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
         jpaPropertiesMap.put("hibernate.hbm2ddl.auto", "update");
         return jpaPropertiesMap;
     }

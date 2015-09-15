@@ -19,7 +19,7 @@
                                 </ol>
                             </div>
                         </div>
-	                        <div>                       
+	                        <div class="row">                       
 	                        	<a class="btn btn-primary" href="<c:url value="/student/add"/>">Add</a> 
 		                        <div id="stu_result">                       
 		                        </div>                       
