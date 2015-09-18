@@ -12,8 +12,7 @@
     </jsp:attribute>
     <jsp:attribute name="navigationContent">
     <!-- Begin page -->
-        <div id="wrapper">
-        
+        <div id="wrapper">        
             <!-- Top Bar Start -->
             <div class="topbar">
                 <!-- LOGO -->
@@ -150,10 +149,10 @@
                                 <a href="<c:url value="/dashboard" />" class="waves-effect"><i class="md md-home"></i><span> Dashboard </span></a>
                             </li>
                             <li>
-                                <a href="<c:url value="/student/show" />" class="waves-effect"><i class="md md-home"></i><span>Manage Student</span></a>
+                                <a href="<c:url value="/student/show" />" class="waves-effect"><i class="md  md-account-box"></i><span>Student</span></a>
                             </li>
                             <li>
-                                <a href="<c:url value="/student/show" />" class="waves-effect"><i class="md md-home"></i><span>Manage Student</span></a>
+                                <a href="<c:url value="/attendance/show" />" class="waves-effect"><i class="md  md-grid-on"></i><span>Attendance</span></a>
                             </li>
 
                             <li class="has_sub">

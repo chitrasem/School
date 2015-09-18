@@ -19,14 +19,18 @@
                                 </ol>
                             </div>
                         </div>
-	                        <div class="row">                       
-	                        	<a class="btn btn-primary" href="<c:url value="/student/add"/>">Add</a> 
-		                        <div id="stu_result">                       
-		                        </div>                       
-		                                                
-	                        </div>                      
-                        
-                        </div>
+	                        <div class="row">
+		                        <div class="col-md-12">
+			                        <div class="panel panel-default">
+			                            <div class="panel-body">
+				                            <a class="btn btn-primary" href="<c:url value="/student/add"/>">Add</a> 
+					                        	<div id="stu_result">                       
+					                        </div>			                            
+			                            </div>
+			                         </div>
+		                         </div> 
+	                         </div>
+                        </div><!-- container -->
                 </div> <!-- content -->                
 
             </div>

@@ -5,6 +5,8 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Student {
@@ -14,8 +16,18 @@ public class Student {
 	private String firstName;
 	private String lastName;
 	private String sex;
+	@Temporal(TemporalType.DATE)
 	private Date birthDate;
+	@Temporal(TemporalType.DATE)
 	private Date registerDate;
+	
+	/*@OneToMany(cascade=CascadeType.ALL)
+	@JoinColumn(name="student_id")
+	private Set<Attendance> attendances = new HashSet<>();*/
+	
+	/*public Set<Attendance> getAttendances() {
+		return attendances;
+	}*/
 	public String getFirstName() {
 		return firstName;
 	}
@@ -48,6 +60,10 @@ public class Student {
 	}
 	public long getId() {
 		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+		
 	}
 	
 	

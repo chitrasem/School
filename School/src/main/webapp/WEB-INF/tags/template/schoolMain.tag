@@ -14,7 +14,7 @@
         <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
         <meta name="author" content="Coderthemes">
 
-        <link rel="shortcut icon" href="resource/images/favicon_1.ico">
+        <link rel="shortcut icon" href="<c:url value="resource/images/favicon_1.ico" />">
     
     	<title>School ||  <c:out value="${fn:trim(htmlTitle)}" /></title>
 
@@ -75,6 +75,7 @@
 	        <script src="<c:url value="/resource/assets/fastclick/fastclick.js" />"></script>
 	        <script src="<c:url value="/resource/assets/jquery-slimscroll/jquery.slimscroll.js" />"></script>
 	        <script src="<c:url value="/resource/assets/jquery-blockui/jquery.blockUI.js" />"></script>
+	        <script src="<c:url value="/resource/js/spin.js" />"></script>
 	        
 	        
 	

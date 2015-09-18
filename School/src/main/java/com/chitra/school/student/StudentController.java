@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.chitra.school.config.DBConfig;
+import com.chitra.school.util.DateUtil;
 
 @Controller
 @RequestMapping("student")
@@ -26,22 +27,29 @@ public class StudentController {
 	@RequestMapping(value="show", method = RequestMethod.GET)
 	public String getStudent()
 	{
-		
+				
 		return "student/list_student";
 	}
-	@RequestMapping(value="add", method=RequestMethod.GET)
-	public String addStudent(){
+	/*@RequestMapping(value="/add", method=RequestMethod.GET)
+	public String addStudent(Map<String, Object> model){
+		model.put("studentForm", new Student());
 		return "student/add_student";		
-	}
-	@RequestMapping(value="add", method=RequestMethod.POST)
-	public void addStudent(@RequestParam("firstName") String firstName){
+	}*/
+	@RequestMapping(value="/add", method=RequestMethod.GET)
+	@ResponseBody
+	public void addStudent(/*@RequestParam("firstName") String firstName,
+						@RequestParam("lastName") String lastName,
+						@RequestParam("sex") String sex*//*,
+						@RequestParam("birthDate") Date birthDate,
+						@RequestParam("registerDate") Date registerDate*/){
 		Student s = new Student();
-		s.setFirstName("Randa");
-		s.setLastName("Sor");
-		s.setSex("Female");
-		s.setBirthDate(new Date());
-		
-		studentDao.save(s);
+		s.setFirstName("Chitra");
+		s.setLastName("Sem");
+		s.setSex("Male");
+		s.setBirthDate(new DateUtil().inputDate("12/30/1990"));	
+		s.setRegisterDate(new Date());
+		studentDao.save(s);		
+		//return new RedirectView("dashboard",true,false);
 		
 	}
 	

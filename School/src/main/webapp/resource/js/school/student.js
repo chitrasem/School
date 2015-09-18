@@ -1,20 +1,31 @@
 $(document).ready(function(){
 	student.load();	
 });
-var student = {
-		
+var student = {		
 	load : function(){
 		$.ajax({
 			type : "GET",
 			dataType: 'json',
 			url : "data",
+			beforeSend : function(){				
+				$('div.content-page').block({ 
+	                css: {border: 'none', 
+	                    padding: '15px', 
+	                    backgroundColor: '#000', 
+	                    '-webkit-border-radius': '10px', 
+	                    '-moz-border-radius': '10px', 
+	                    opacity: .5, 
+	                    color: '#fff'  } 
+	            });   
+				
+			},
 			success : function(data){
+				$('div.content-page').unblock();
 				if(data['item']){
 					student.createTable(data);					
 				}else{
-					//alert("Please contact to the IT for the following erroro: " +data['error']);
 					var message = '<div class="alert alert-danger">'+
-									'Please contact to the IT for the following erroro:'+data['error']+
+									'Please contact to the IT for the following error:'+data['error']+
 								  '</div>';
 					$("#stu_result").html(message);
 					$("#stu_result").css("padding-top","20px");
@@ -25,7 +36,6 @@ var student = {
 		
 	},
 	createTable : function(data){
-		console.log(data['item'].length);
 		if(data['item'].length>0){
 			var student = data['item'];
 			var table = "<table class='table'>" +

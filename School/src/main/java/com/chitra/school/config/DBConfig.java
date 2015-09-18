@@ -17,6 +17,10 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.chitra.school.attendance.AttendanceDao;
+import com.chitra.school.attendance.AttendanceDaoImpl;
+import com.chitra.school.attendance.AttendanceService;
+import com.chitra.school.attendance.AttendanceServiceImpl;
 import com.chitra.school.student.StudentDao;
 import com.chitra.school.student.StudentDaoImpl;
 import com.chitra.school.student.StudentService;
@@ -101,6 +105,19 @@ public class DBConfig {
     	StudentServiceImpl bean = new StudentServiceImpl();
     	bean.setStudentDao(studentDao());
     	return bean;
+    }
+    
+    @Bean
+    public AttendanceDao attendanceDao(){
+    	AttendanceDaoImpl bean = new AttendanceDaoImpl();
+    	return bean;
+    }
+    @Bean
+    public AttendanceService attendanceService(){
+    	AttendanceServiceImpl bean = new AttendanceServiceImpl();
+    	bean.setAttendanceDao(attendanceDao());
+    	return bean;
+    	
     }
     
     @Bean
