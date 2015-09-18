@@ -1,6 +1,5 @@
 package com.chitra.school.attendance;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.chitra.school.config.DBConfig;
-import com.chitra.school.student.Student;
+import com.chitra.school.entity.Student;
 import com.chitra.school.util.DateUtil;
 
 @Controller

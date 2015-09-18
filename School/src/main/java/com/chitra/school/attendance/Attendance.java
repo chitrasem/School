@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import com.chitra.school.student.Student;
+import com.chitra.school.entity.Student;
 
 @Entity
 public class Attendance {

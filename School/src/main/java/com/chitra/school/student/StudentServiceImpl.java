@@ -2,10 +2,9 @@ package com.chitra.school.student;
 
 import java.util.List;
 
-import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 
-import com.chitra.school.test.BookDao;
+import com.chitra.school.entity.Student;
 
 @Transactional
 public class StudentServiceImpl implements StudentService{

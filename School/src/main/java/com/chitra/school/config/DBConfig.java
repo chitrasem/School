@@ -25,10 +25,6 @@ import com.chitra.school.student.StudentDao;
 import com.chitra.school.student.StudentDaoImpl;
 import com.chitra.school.student.StudentService;
 import com.chitra.school.student.StudentServiceImpl;
-import com.chitra.school.test.BookDao;
-import com.chitra.school.test.BookDaoImpl;
-import com.chitra.school.test.BookService;
-import com.chitra.school.test.BookServiceImpl;
 
 @Configuration
 @EnableTransactionManagement
@@ -81,18 +77,7 @@ public class DBConfig {
         return transactionManager;
     }
 
-    @Bean
-    public BookDao bookDao() {
-        BookDaoImpl bean = new BookDaoImpl();
-        return bean;
-    }
-    
-    @Bean
-    public BookService bookService() {
-        BookServiceImpl bean = new BookServiceImpl();
-        bean.setBookDao(bookDao());
-        return bean;
-    }
+   
     
     @Bean 
     public StudentDao studentDao(){

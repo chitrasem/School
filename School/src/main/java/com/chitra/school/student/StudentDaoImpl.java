@@ -8,6 +8,8 @@ import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 
+import com.chitra.school.entity.Student;
+
 @Repository
 public class StudentDaoImpl implements StudentDao{
 	 @PersistenceContext

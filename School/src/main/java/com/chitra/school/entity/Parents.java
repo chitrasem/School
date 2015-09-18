@@ -1,6 +1,5 @@
-package com.chitra.school.parent;
+package com.chitra.school.entity;
 
-import javax.annotation.Generated;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
