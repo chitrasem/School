@@ -28,13 +28,13 @@ public class Student {
 	@Temporal(TemporalType.DATE)
 	private Date registerDate;
 	
-	@JoinColumn(name="parent_id")
+	/*@JoinColumn(name="parent_id")
 	@OneToMany(cascade=CascadeType.ALL)
-	private Set<Parents> parents = new HashSet<>();
+	private Set<Parents> parents = new HashSet<>();*/
 	
-	@JoinColumn(name="staff_id")
+	/*@JoinColumn(name="staff_id")
 	@OneToMany(cascade=CascadeType.ALL)
-	private Set<Staff> staffs = new HashSet<>();
+	private Set<Staff> staffs = new HashSet<>();*/
 	
 	/*@OneToMany(cascade=CascadeType.ALL)
 	@JoinColumn(name="student_id")
@@ -44,21 +44,21 @@ public class Student {
 		return attendances;
 	}*/
 	
-	public Set<Staff> getStaffs() {
+	/*public Set<Staff> getStaffs() {
 		return staffs;
 	}
 	public void setStaffs(Set<Staff> staffs) {
 		this.staffs = staffs;
-	}
+	}*/
 	public String getFirstName() {
 		return firstName;
 	}
-	public Set<Parents> getParents() {
+	/*public Set<Parents> getParents() {
 		return parents;
 	}
 	public void setParents(Set<Parents> parents) {
 		this.parents = parents;
-	}
+	}*/
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}

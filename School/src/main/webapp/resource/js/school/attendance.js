@@ -1,5 +1,8 @@
 $(document).ready(function(){
 	attendance.loadData();
+	//attendance.showClass();
+	
+	
 });
 var message = {
 		noData : '<div class="alert alert-success">'+
@@ -14,28 +17,53 @@ var message = {
 			
 };
 var attendance = {
+		block : function(){
+			$('div.content-page').block({ 
+                css: {border: 'none', 
+                    padding: '15px', 
+                    backgroundColor: '#000', 
+                    '-webkit-border-radius': '10px', 
+                    '-moz-border-radius': '10px', 
+                    opacity: .5, 
+                    color: '#fff'  } 
+            });
+			
+		},
+		unblock : function(){
+			$('div.content-page').unblock();			
+		},
+		showClass : function(){
+			$.ajax({
+				
+				type : 'GET',
+				url  : '',
+				dataType : 'json',
+				beforeSend : function(){
+					
+				},
+				success : function(resp){
+					
+				},
+				error : function(){
+					
+				}
+			});			
+		},
 		loadData : function(){
 			$.ajax({
 				type : 'GET',
 				dataType : 'json',
 				url : "list",
-				beforeSend : function(){
-					$('div.content-page').block({ 
-		                css: {border: 'none', 
-		                    padding: '15px', 
-		                    backgroundColor: '#000', 
-		                    '-webkit-border-radius': '10px', 
-		                    '-moz-border-radius': '10px', 
-		                    opacity: .5, 
-		                    color: '#fff'  } 
-		            }); 
+				beforeSend : function(){ 
+					attendance.block();
 				},
 				error : function(){
-					$('div.content-page').unblock()
+					$('div.content-page').unblock();
 					
 				},
 				success : function(response){
-					$('div.content-page').unblock()
+					attendance.unblock();
+					
 					if(response['item']){
 						attendance.createAttendanceList(response,09,2015);
 						
@@ -51,10 +79,19 @@ var attendance = {
 				$("#att_result").html(message.noData);
 				$("#att_result").css("padding-top","20px");
 			}else{
-				var students = [];
-				for(i=0;i<response['item'].length;i++){
-					students.push(response['item'][i]['student'].firstName+" "+response['item'][i]['student'].lastName);
-				}
+				$.ajax({
+					type: "GET",
+					dataType : "JSON",
+					url : "/School/student/studentName",
+					success : function(data){	
+						var students = [];						
+						for(i=0; i<data['item'].length;i++){
+							students.push(data['item'][i][0]+" "+data['item'][i][1]);
+						}
+						console.log(students);
+						
+					}
+				});
 				var attendances = [];
 				var atten = {};
 				
@@ -105,18 +142,32 @@ var attendance = {
 							"<td  style='font-weight: bold;'>"+students[i]+"</td>";
 					for(var j=0; j<days.length;j++){
 						for(var k=0;k<attendances.length;k++){
+							
 							if(attendances[k].stu_id == i && attendances[k].date.getDate() == days[j].getDate()){
-								status = attendances[k].status;
+								status = attendances[k].status;							
+								
 							}
-
 						}
-						str += "<td><input type='text' style='text-align: center; width:20px; font-weight: bold;' maxlength='1' value='"+status+"'></td>";
+						//str += "<td><input type='text' style='text-align: center; width:20px; font-weight: bold;' maxlength='1' value='"+status+"'></td>";
+						str += "<td><a href='#' class='sex' data-type='select' data-pk='1' data-value='"+status[j]+"' data-title='emp'></a></td>";
 					}
-
 					str +="</tr>";
-					$("#ATTENDANCE tbody").append(str);
+					$("#ATTENDANCE tbody").append(str);		
+					
 					
 				}
+				//
+				 $('.sex').editable({
+				      prepend: "emp",
+				      source: [
+				      {value: 1, text: 'B'},
+				      {value: 2, text: 'A'}
+				      ]
+				    });
+
+
+				
+				//
 			}
 			
 		},

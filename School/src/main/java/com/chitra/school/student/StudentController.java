@@ -68,5 +68,22 @@ public class StudentController {
 		
 		
 	}
+	
+	@ResponseBody
+	@RequestMapping(value="studentName", method=RequestMethod.GET)
+	public Map<String, Object> studentName(){
+		Map<String, Object> map = new HashMap<>();
+		try{
+			List<Student> students = studentDao.studentName();
+			map.put("item", students);
+			return map;
+		}catch(Exception ex)
+		{
+			map.put("error", ex.getMessage());
+			return map;
+		}	
+		
+		
+	}
 
 }

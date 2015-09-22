@@ -36,6 +36,7 @@ var student = {
 		
 	},
 	createTable : function(data){
+		console.log(data['item'][0][0]);
 		if(data['item'].length>0){
 			var student = data['item'];
 			var table = "<table class='table'>" +
@@ -50,10 +51,10 @@ var student = {
 			for(i=0;i<student.length;i++){
 				table +="<tr>" +
 							"<td>"+(i+1)+"</td>"+
-							"<td>"+student[i]['firstName']+" "+student[i]['lastName']+"</td>"+
-							"<td>"+student[i]['sex']+"</td>"+
-							"<td>"+student[i]['birthDate']+"</td>"+
-							"<td>"+student[i]['registerDate']+"</td>"+
+							"<td>"+student[i][0]+" "+student[i][1]+"</td>"+
+							"<td>"+student[i][2]+"</td>"+
+							"<td>"+student[i][3]+"</td>"+
+							"<td>"+student[i][4]+"</td>"+
 						"</tr>";	
 			}
 			table += "</tbody></table>"
