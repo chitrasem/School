@@ -4,34 +4,7 @@ $(document).ready(function(){
 	
 	
 });
-var message = {
-		noData : '<div class="alert alert-success">'+
-				 'There is no data in the database yet. <a href="add" class="alert-link">Click here</a>.to add'+
-				 '</div>',
-		dbError : function(messageError){
-			message = '<div class="alert alert-danger">'+
-			'Please contact to the IT for the following error:'+messageError+
-			  '</div>';
-			return message;
-		}
-			
-};
 var attendance = {
-		block : function(){
-			$('div.content-page').block({ 
-                css: {border: 'none', 
-                    padding: '15px', 
-                    backgroundColor: '#000', 
-                    '-webkit-border-radius': '10px', 
-                    '-moz-border-radius': '10px', 
-                    opacity: .5, 
-                    color: '#fff'  } 
-            });
-			
-		},
-		unblock : function(){
-			$('div.content-page').unblock();			
-		},
 		showClass : function(){
 			$.ajax({
 				
@@ -55,20 +28,20 @@ var attendance = {
 				dataType : 'json',
 				url : "list",
 				beforeSend : function(){ 
-					attendance.block();
+					school.block();
 				},
 				error : function(){
 					$('div.content-page').unblock();
 					
 				},
 				success : function(response){
-					attendance.unblock();
+					school.unblock();
 					
 					if(response['item']){
 						attendance.createAttendanceList(response,09,2015);
 						
 					}else{
-						$("#att_result").html(message.dbError(response['error']));
+						$("#att_result").html(school.dbError(response['error']));
 						$("#att_result").css("padding-top","20px");
 					}
 				}

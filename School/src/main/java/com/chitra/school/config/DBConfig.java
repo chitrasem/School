@@ -21,6 +21,14 @@ import com.chitra.school.attendance.AttendanceDao;
 import com.chitra.school.attendance.AttendanceDaoImpl;
 import com.chitra.school.attendance.AttendanceService;
 import com.chitra.school.attendance.AttendanceServiceImpl;
+import com.chitra.school.classroom.ClassroomDao;
+import com.chitra.school.classroom.ClassroomDaoImpl;
+import com.chitra.school.classroom.ClassroomService;
+import com.chitra.school.classroom.ClassroomServiceImpl;
+import com.chitra.school.parents.ParentsInfoDao;
+import com.chitra.school.parents.ParentsInfoDaoImpl;
+import com.chitra.school.parents.ParentsInfoService;
+import com.chitra.school.parents.ParentsInfoServiceImpl;
 import com.chitra.school.student.StudentDao;
 import com.chitra.school.student.StudentDaoImpl;
 import com.chitra.school.student.StudentService;
@@ -103,6 +111,28 @@ public class DBConfig {
     	bean.setAttendanceDao(attendanceDao());
     	return bean;
     	
+    }
+    @Bean 
+    public ClassroomDao classroomDao(){
+    	ClassroomDaoImpl bean = new ClassroomDaoImpl();
+    	return bean;
+    }
+    @Bean 
+    public ClassroomService classroomService(){
+    	ClassroomServiceImpl bean = new ClassroomServiceImpl();
+    	bean.setClassroomDao(classroomDao());
+    	return bean;
+    }
+    @Bean 
+    public ParentsInfoDao parentsInfoDao(){
+    	ParentsInfoDaoImpl bean = new ParentsInfoDaoImpl();
+    	return bean;
+    }
+    @Bean 
+    public ParentsInfoService parentsInfoService(){
+    	ParentsInfoServiceImpl bean = new ParentsInfoServiceImpl();
+    	bean.setClassroomDao(parentsInfoDao());
+    	return bean;
     }
     
     @Bean

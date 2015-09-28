@@ -6,6 +6,7 @@
 */
 
 (function( $ ) {
+	debugger;
 
 	'use strict';
 

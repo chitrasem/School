@@ -9,7 +9,7 @@ import com.chitra.school.entity.Student;
 @Transactional
 public class StudentServiceImpl implements StudentService{
 	
-	StudentDao studentDao;
+	private StudentDao studentDao;
 
 	public void setStudentDao(StudentDao studentDao) {
 		this.studentDao = studentDao;

@@ -17,6 +17,10 @@
         <link rel="shortcut icon" href="<c:url value="/resource/images/favicon_1.ico" />">
     
     	<title>School ||  <c:out value="${fn:trim(htmlTitle)}" /></title>
+    	
+    	<!-- JSGRID -->
+    	<link type="text/css" rel="stylesheet" href="<c:url value="/resource/assets/jsgrid-master/css/jsgrid.css" />" />
+		<link type="text/css" rel="stylesheet" href="<c:url value="/resource/assets/jsgrid-master/css/theme.css" />"/>
 
         <!-- Base Css Files -->
         <link href="<c:url value="/resource/css/bootstrap.min.css" />" rel="stylesheet" />
@@ -38,6 +42,9 @@
 		<!-- Modal -->
 		<link href="<c:url value="/resource/assets/modal-effect/css/component.css" />" rel="stylesheet">
 		
+        <!-- Plugin Css-->
+        <link rel="stylesheet" href="<c:url value="/resource/assets/magnific-popup/magnific-popup.css" />" />
+        <link rel="stylesheet" href="<c:url value="/resource/assets/jquery-datatables-editable/datatables.css" />" />
         <!-- X-editable css -->
         <link type="text/css" href="<c:url value="/resource/assets/bootstrap3-editable/bootstrap-editable.css" />" rel="stylesheet">
         
@@ -76,6 +83,16 @@
 	        <script src="<c:url value="/resource/assets/jquery-slimscroll/jquery.slimscroll.js" />"></script>
 	        <script src="<c:url value="/resource/assets/jquery-blockui/jquery.blockUI.js" />"></script>
 	        <script src="<c:url value="/resource/js/spin.js" />"></script>
+	        
+            <script src="<c:url value="/resource/assets/jsgrid-master/src/jsgrid.core.js" />"></script>
+		    <script src="<c:url value="/resource/assets/jsgrid-master/src/jsgrid.load-indicator.js" />"></script>
+		    <script src="<c:url value="/resource/assets/jsgrid-master/src/jsgrid.load-strategies.js" />"></script>
+		    <script src="<c:url value="/resource/assets/jsgrid-master/src/jsgrid.sort-strategies.js" />"></script>
+		    <script src="<c:url value="/resource/assets/jsgrid-master/src/jsgrid.field.js" />"></script>
+		    <script src="<c:url value="/resource/assets/jsgrid-master/src/jsgrid.field.text.js" />"></script>
+		    <script src="<c:url value="/resource/assets/jsgrid-master/src/jsgrid.field.textarea.js" />"></script>
+		    <script src="<c:url value="/resource/assets/jsgrid-master/src/jsgrid.field.number.js" />"></script>
+		    <script src="<c:url value="/resource/assets/jsgrid-master/demos/db.js" />"></script>
 	        
 	        
 	

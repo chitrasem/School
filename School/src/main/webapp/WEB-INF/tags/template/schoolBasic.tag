@@ -152,7 +152,13 @@
                                 <a href="<c:url value="/student/show" />" class="waves-effect"><i class="md  md-account-box"></i><span>Student</span></a>
                             </li>
                             <li>
-                                <a href="<c:url value="/attendance/show" />" class="waves-effect"><i class="md  md-grid-on"></i><span>Attendance</span></a>
+                                <a href="<c:url value="/attendance/show" />" class="waves-effect"><i class="ion  ion-checkmark-circled"></i><span>Attendance</span></a>
+                            </li>
+                            <li>
+                                <a href="<c:url value="/classroom/show" />" class="waves-effect"><i class="ion  ion-ios7-monitor"></i><span>Classroom</span></a>
+                            </li>
+                            <li>
+                                <a href="<c:url value="/level/show" />" class="waves-effect"><i class="fa   fa-book"></i><span>Level</span></a>
                             </li>
 
                             <li class="has_sub">

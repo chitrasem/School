@@ -53,6 +53,8 @@
 	<!-- XEditable Plugin -->
         <script type="text/javascript" src="<c:url value="/resource/assets/bootstrap3-editable/moment.min.js" />"></script>    
         <script type="text/javascript" src="<c:url value="/resource/assets/bootstrap3-editable/bootstrap-editable.js" />"></script>
+	
+	<script src="<c:url value="/resource/js/school/school.js" />"></script>
 	<script src="<c:url value="/resource/js/school/attendance.js" />"></script>
 	
 
