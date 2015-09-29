@@ -18,6 +18,10 @@
     
     	<title>School ||  <c:out value="${fn:trim(htmlTitle)}" /></title>
     	
+    	
+        
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    	
     	<!-- JSGRID -->
     	<link type="text/css" rel="stylesheet" href="<c:url value="/resource/assets/jsgrid-master/css/jsgrid.css" />" />
 		<link type="text/css" rel="stylesheet" href="<c:url value="/resource/assets/jsgrid-master/css/theme.css" />"/>
@@ -54,6 +58,9 @@
         <!-- Custom Files -->
         <link href="<c:url value="/resource/css/helper.css" />" rel="stylesheet"  type="text/css" />
         <link href="<c:url value="/resource/css/style.css" />" rel="stylesheet"  type="text/css" />
+        
+        <!-- Select 2 -->
+        <link href="<c:url value="/resource/assets/select2/select2.css" />" rel="stylesheet" type="text/css" />
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -93,11 +100,17 @@
 		    <script src="<c:url value="/resource/assets/jsgrid-master/src/jsgrid.field.textarea.js" />"></script>
 		    <script src="<c:url value="/resource/assets/jsgrid-master/src/jsgrid.field.number.js" />"></script>
 		    <script src="<c:url value="/resource/assets/jsgrid-master/demos/db.js" />"></script>
-	        
-	        
-	
-	
-	        <!-- CUSTOM JS -->
+		    
+		   <%--  <script src="<c:url value="/resource/assets/jquery-multi-select/jquery.multi-select.js" />"></script>
+        	<script src="<c:url value="/resource/assets/jquery-multi-select/jquery.quicksearch.js" />"></script> --%>
+        	
+        	<!-- Select 2 -->
+       		<script src="<c:url value="/resource/assets/select2/select2.min.js" />" type="text/javascript"></script>
+		    
+		    
+		    <script src="<c:url value="/resource/js/jquery-ui-1.10.1.custom.min.js" />"></script>
+		    
+		    
 	        <script src="<c:url value="/resource/js/jquery.app.js" />"></script>
 	        
         <jsp:doBody />

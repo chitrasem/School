@@ -1,15 +1,13 @@
 package com.chitra.school.entity;
 
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -25,12 +23,44 @@ public class Student {
 	private String sex;
 	@Temporal(TemporalType.DATE)
 	private Date birthDate;
+	private String address;
+	private String phoneNumber;
+	
 	@Temporal(TemporalType.DATE)
 	private Date registerDate;
 	
-	/*@JoinColumn(name="parent_id")
-	@OneToMany(cascade=CascadeType.ALL)
-	private Set<Parents> parents = new HashSet<>();*/
+	@ManyToOne(fetch=FetchType.LAZY) 
+	@JoinColumn(name="parent_id")
+	private ParentsInfo parentsInfo;
+	
+	@ManyToOne(fetch=FetchType.LAZY) 
+	@JoinColumn(name="staff_id")
+	private Staff staff;
+	
+	public ParentsInfo getParentsInfo() {
+		return parentsInfo;
+	}
+	public void setParentsInfo(ParentsInfo parentsInfo) {
+		this.parentsInfo = parentsInfo;
+	}
+	public Staff getStaff() {
+		return staff;
+	}
+	public void setStaff(Staff staff) {
+		this.staff = staff;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
 	
 	/*@JoinColumn(name="staff_id")
 	@OneToMany(cascade=CascadeType.ALL)

@@ -23,8 +23,15 @@ public class StudentDaoImpl implements StudentDao{
 
 
 	public List<Student> getStudent() {
-		Query query = entityManager.createQuery(
-				"select s.firstName, s.lastName, s.sex, s.birthDate, s.registerDate from Student s");
+		/*Query query = entityManager.createQuery(
+				"select s.firstName, s.lastName, s.sex, s.birthDate, s.registerDate t.firstName, t.lastName "
+				+ "from Staff t "
+				+ "join t.students s "
+				+ "ORDER BY s.id DESC");*/
+		 Query query = entityManager.createQuery(
+				 "SELECT s.firstName, s.lastName, s.sex, s.birthDate, s.registerDate, t.firstName from Staff t join t.students s "
+				 + "WHERE t.id = 2L "
+				 + "ORDER BY s.id");
 		List<Student> students = query.getResultList();
 		return students;
 	}

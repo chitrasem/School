@@ -5,9 +5,11 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -18,13 +20,35 @@ public class Staff {
 	private String firstName;
 	private String lastName;
 	private String gender;
-	private String phone;
 	private String phoneNumber;
 	private String address;
 	
+	@ManyToOne(fetch=FetchType.LAZY) 
 	@JoinColumn(name="user_id")
-	@OneToMany(cascade = CascadeType.ALL)
-	private Set<User> users = new HashSet<>();
+	private User user;
+	
+	@OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name="staff_id")
+	private Set<Student> students = new HashSet<>();
+	
+	public Set<Student> getStudents() {
+		return students;
+	}
+	public void setStudents(Set<Student> students) {
+		this.students = students;
+	}
+	public Staff(){}
+	public Staff(long id){
+		this.id = id;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
 
 	public long getId() {
 		return id;
@@ -58,14 +82,6 @@ public class Staff {
 		this.gender = gender;
 	}
 
-	public String getPhone() {
-		return phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
@@ -80,14 +96,6 @@ public class Staff {
 
 	public void setAddress(String address) {
 		this.address = address;
-	}
-
-	public Set<User> getUsers() {
-		return users;
-	}
-
-	public void setUsers(Set<User> users) {
-		this.users = users;
 	}
 	
 }

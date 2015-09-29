@@ -1,4 +1,5 @@
 var school = {
+		
 		noData : '<div class="alert alert-success">'+
 				 'There is no data in the database yet. <a href="add" class="alert-link">Click here</a>.to add'+
 				 '</div>',
