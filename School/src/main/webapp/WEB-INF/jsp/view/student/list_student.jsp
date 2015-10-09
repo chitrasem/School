@@ -22,9 +22,25 @@
                 <div class="row">
                  <div class="col-md-12">
                   <div class="panel panel-default">
-                      <div class="panel-body">
-                      
-                      <!-- The dialog form -->
+                      <div class="panel-body">	                       							      
+					      <div class="form-group">
+						      <div class="col-sm-2">
+						        <select data-placeholder="choose teacher..." class="select2 select_teacher" name="teacher" id="teacher_">
+						        	<option value="">&nbsp;</option>
+						        </select>
+					      	  </div>
+						      <div class="col-sm-2">
+						        <select data-placeholder="choose time..." class="select2 select-study-time" name="teacher" id="study-time_">
+						        	
+						        </select>
+					      	  </div>
+							  <input type="button" class="btn btn-success" id="create-student" value="Create Student">					      	  
+					      </div>
+							      
+							      
+	                    <div id="stu_result">                       
+	                    </div>
+	                    <!-- The dialog form -->
                       	<div id="dialog-form" title="Create new user" style="width: 700px;">                      		
                              <div class="alert alert-danger alert-dismissable">                             	
                       		 	<p class="validateTips">(*) requirement fields</p>
@@ -34,10 +50,8 @@
 							      <div class="form-group">
 								      <label class="col-sm-3 control-label" for="teacher">Teacher *</label>
 								      <div class="col-sm-6">
-								        <select data-placeholder="choose teacher..." class="select2" name="teacher" id="teacher">
+								        <select data-placeholder="choose teacher..." class="select2 select_teacher" name="teacher" id="teacher">
                                             <option value="">&nbsp;</option>
-								        	<option value="1">Sem Chitra</option>
-								        	<option value="2">San Sopheak</option>
 								        </select>
 							      	  </div>							      	  
 								        <input type="button" value="+" class="btn btn-info">							      	  
@@ -45,35 +59,41 @@
 							      <div class="form-group">
 								      <label class="col-sm-3 control-label" for="first_name">First Name *</label>
 								      <div class="col-sm-9">
-								      	<input type="text" name="first_name" id="first_name" placeholder="first name" class="text ui-widget-content ui-corner-all form-control">
+								      	<input type="text" name="first_name" id="first_name" class="form-control">
 							      	  </div>
 							      </div>							      
 							      <div class="form-group">
 								      <label class="col-sm-3 control-label" for="last_name">Last Name *</label>
 								      <div class="col-sm-9">
-								      	<input type="text" name="last_name" id="last_name" placeholder="last name" class="text ui-widget-content ui-corner-all form-control">
+								      	<input type="text" name="last_name" id="last_name" class="form-control">
 							      	  </div>
 							      </div>							      
 							      <div class="form-group">
 								      <label class="col-sm-3 control-label" for="gender">Gender</label>
 							      	  <div class="col-sm-3">
-								        <select data-placeholder="choose teacher..." class="select2" name="gender" id="gender">
-                                            <option value="#">&nbsp;</option>
+								        <select data-placeholder="choose gender..." class="select2" name="gender" id="gender">
+                                            <option value="">&nbsp;</option>
 								        	<option value="M">Male</option>
 								        	<option value="F">Female</option>
 								        </select>
 							      	  </div>
 							      </div>							      
 							      <div class="form-group">
-								      <label class="col-sm-3 control-label" for="date_birth">Date of Birth *</label>
+								      <label class="col-sm-3 control-label" for="phone_number">Phone number *</label>
 								      <div class="col-sm-9">
-								      	<input type="text" name="date_birth" id="date_birth" class="text ui-widget-content ui-corner-all form-control">
+								      	<input type="text" name="phone_number" id="phone_number" class="form-control">
 							      	  </div>
 							      </div>							      
 							      <div class="form-group">
-								      <label class="col-sm-3 control-label" for="date_enrolled">Date of Birth *</label>
-								      <div class="col-sm-9">
-								      	<input type="text" name="date_enrolled" id="date_enrolled" class="text ui-widget-content ui-corner-all form-control">
+								      <label class="col-sm-3 control-label" for="date_birth">Date of Birth *</label>
+								      <div class="col-sm-3">
+								      	<input type="text" name="date_birth" id="date_birth" class="form-control">
+							      	  </div>
+							      </div>							      
+							      <div class="form-group">
+								      <label class="col-sm-3 control-label" for="date_enrolled">Enrolled Date *</label>
+								      <div class="col-sm-3">
+								      	<input type="text" name="date_enrolled" id="date_enrolled" class="form-control">
 							      	  </div>
 							      </div>
 							      
@@ -86,20 +106,7 @@
 							      </div>								    
 							  </form>						  
 						</div>
-					<!-- End dialog form -->
-						
-						<input type="button" class="btn btn-success" id="create-student" value="Create Student">
-	                       <a class="btn btn-primary" href="<c:url value="/student/add"/>">Add</a> 
-	                       <a class="btn btn-info" href="<c:url value="/student/add"/>">Add</a> 
-	                       <select class="btn btn-primary">
-							  <option>A1</option>
-							  <option>A2</option> 
-							  <option>A3</option>
-							  <option>A4</option>
-							  <option>A5</option>
-							</select>
-                    <div id="stu_result">                       
-                    </div>			                            
+					<!-- End dialog form -->			                            
                       </div>
                    </div>
                   </div> 

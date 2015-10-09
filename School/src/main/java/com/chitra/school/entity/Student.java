@@ -25,6 +25,8 @@ public class Student {
 	private Date birthDate;
 	private String address;
 	private String phoneNumber;
+	private boolean status;
+	private String imgUrl;
 	
 	@Temporal(TemporalType.DATE)
 	private Date registerDate;
@@ -36,6 +38,34 @@ public class Student {
 	@ManyToOne(fetch=FetchType.LAZY) 
 	@JoinColumn(name="staff_id")
 	private Staff staff;
+	
+
+	@ManyToOne(fetch=FetchType.LAZY) 
+	@JoinColumn(name="classRoom_id")
+	private ClassRoom classRoom;
+	
+	@ManyToOne(fetch=FetchType.LAZY) 
+	@JoinColumn(name="studyTime_id")
+	private StudyTime studyTime;
+	
+	public boolean isStatus() {
+		return status;
+	}
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+	public ClassRoom getClassRoom() {
+		return classRoom;
+	}
+	public void setClassRoom(ClassRoom classRoom) {
+		this.classRoom = classRoom;
+	}
+	public StudyTime getStudyTime() {
+		return studyTime;
+	}
+	public void setStudyTime(StudyTime studyTime) {
+		this.studyTime = studyTime;
+	}
 	
 	public ParentsInfo getParentsInfo() {
 		return parentsInfo;
@@ -61,34 +91,9 @@ public class Student {
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-	
-	/*@JoinColumn(name="staff_id")
-	@OneToMany(cascade=CascadeType.ALL)
-	private Set<Staff> staffs = new HashSet<>();*/
-	
-	/*@OneToMany(cascade=CascadeType.ALL)
-	@JoinColumn(name="student_id")
-	private Set<Attendance> attendances = new HashSet<>();*/
-	
-	/*public Set<Attendance> getAttendances() {
-		return attendances;
-	}*/
-	
-	/*public Set<Staff> getStaffs() {
-		return staffs;
-	}
-	public void setStaffs(Set<Staff> staffs) {
-		this.staffs = staffs;
-	}*/
 	public String getFirstName() {
 		return firstName;
 	}
-	/*public Set<Parents> getParents() {
-		return parents;
-	}
-	public void setParents(Set<Parents> parents) {
-		this.parents = parents;
-	}*/
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}

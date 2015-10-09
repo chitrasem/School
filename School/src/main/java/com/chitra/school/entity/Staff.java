@@ -9,6 +9,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -23,6 +25,14 @@ public class Staff {
 	private String phoneNumber;
 	private String address;
 	
+	@ManyToMany
+	@JoinTable(name="TEACHER_TIMES")
+	private Set<StudyTime> studyTimes;
+	
+	public Set<StudyTime> getStudyTimes() {
+		return studyTimes;
+	}
+
 	@ManyToOne(fetch=FetchType.LAZY) 
 	@JoinColumn(name="user_id")
 	private User user;

@@ -18,7 +18,7 @@ import com.chitra.school.util.DateUtil;
 @RequestMapping("attendance")
 public class AttendanceController {
 	
-	AnnotationConfigApplicationContext context = 
+	/*AnnotationConfigApplicationContext context = 
 			new AnnotationConfigApplicationContext(DBConfig.class);
 	AttendanceService attendanceDao = 
 			context.getBean(AttendanceService.class);
@@ -61,5 +61,5 @@ public class AttendanceController {
 		
 		return m;
 	}
-
+*/
 }

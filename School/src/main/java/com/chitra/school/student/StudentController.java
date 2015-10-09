@@ -7,6 +7,7 @@ import java.util.Map;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -37,11 +38,14 @@ public class StudentController {
 	}*/
 	@RequestMapping(value="/add", method=RequestMethod.POST)
 	@ResponseBody
-	public Map<String, Object> addStudent(@RequestParam("first_name") String firstName,
-						@RequestParam("last_name") String lastName,
-						@RequestParam("gender") String gender,						
-						@RequestParam("date_birth") String birthDate,
-						@RequestParam("date_enrolled") String registerDate)
+	public Map<String, Object> addStudent(
+			@RequestParam("teacher_id") long teacher_id,
+			@RequestParam("first_name") String firstName,
+			@RequestParam("last_name") String lastName,
+			@RequestParam("gender") String gender,			
+			@RequestParam("phone_number") String phone_number,				
+			@RequestParam("date_birth") String birthDate,
+			@RequestParam("date_enrolled") String registerDate)
 	{
 		
 		Student s = new Student();
@@ -49,9 +53,11 @@ public class StudentController {
 		s.setFirstName(firstName);
 		s.setLastName(lastName);
 		s.setSex(gender);
+		s.setPhoneNumber(phone_number);
 		s.setBirthDate(new DateUtil().inputDate(birthDate));	
 		s.setRegisterDate(new DateUtil().inputDate(registerDate));
-		s.setStaff(new Staff(2L));
+		
+		s.setStaff(new Staff(teacher_id));
 		studentDao.save(s);		
 		//return new RedirectView("dashboard",true,false);
 		Map<String, Object> m = new HashMap<>();
@@ -62,11 +68,14 @@ public class StudentController {
 	}
 	
 	@ResponseBody
-	@RequestMapping(value="data", method=RequestMethod.GET)
-	public Map<String, Object> listStudent(){
+	@RequestMapping(value="list", method=RequestMethod.POST)
+	public Map<String, Object> listStudent(
+			@RequestParam("teacher_id") long teacher_id,
+			@RequestParam("study_time_id") long study_time_id)
+	{
 		Map<String, Object> map = new HashMap<>();
 		try{
-			List<Student> students = studentDao.getStudent();
+			List<Student> students = studentDao.getStudent(teacher_id, study_time_id);
 			map.put("item", students);
 			return map;
 		}catch(Exception ex)

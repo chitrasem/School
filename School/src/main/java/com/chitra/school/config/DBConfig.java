@@ -29,10 +29,18 @@ import com.chitra.school.parents.ParentsInfoDao;
 import com.chitra.school.parents.ParentsInfoDaoImpl;
 import com.chitra.school.parents.ParentsInfoService;
 import com.chitra.school.parents.ParentsInfoServiceImpl;
+import com.chitra.school.staff.StaffDao;
+import com.chitra.school.staff.StaffDaoImpl;
+import com.chitra.school.staff.StaffService;
+import com.chitra.school.staff.StaffServiceImpl;
 import com.chitra.school.student.StudentDao;
 import com.chitra.school.student.StudentDaoImpl;
 import com.chitra.school.student.StudentService;
 import com.chitra.school.student.StudentServiceImpl;
+import com.chitra.school.studyTime.StudyTimeDao;
+import com.chitra.school.studyTime.StudyTimeDaoImpl;
+import com.chitra.school.studyTime.StudyTimeService;
+import com.chitra.school.studyTime.StudyTimeServiceDao;
 
 @Configuration
 @EnableTransactionManagement
@@ -132,6 +140,31 @@ public class DBConfig {
     public ParentsInfoService parentsInfoService(){
     	ParentsInfoServiceImpl bean = new ParentsInfoServiceImpl();
     	bean.setClassroomDao(parentsInfoDao());
+    	return bean;
+    }
+    
+    @Bean
+    public StaffDao staffDao(){
+    	StaffDaoImpl bean = new StaffDaoImpl();
+    	return bean;
+    }
+    
+    @Bean
+    public StaffService staffService(){
+    	StaffServiceImpl bean = new StaffServiceImpl();
+    	bean.setStaffDao(staffDao());
+    	return bean;
+    }
+    
+    @Bean
+    public StudyTimeDao studyTimeDao(){
+    	StudyTimeDaoImpl bean = new StudyTimeDaoImpl();
+    	return bean;
+    }
+    @Bean
+    public StudyTimeService studyTimeService(){
+    	StudyTimeServiceDao bean = new StudyTimeServiceDao();
+    	bean.setStudyTime(studyTimeDao());
     	return bean;
     }
     

@@ -20,14 +20,15 @@ public class StudentServiceImpl implements StudentService{
 		studentDao.save(student);		
 	}
 
-	@Override
-	public List<Student> getStudent() {
-		return studentDao.getStudent();
-	}
 
 	@Override
 	public List<Student> studentName() {
 		return studentDao.getStudentName();
+	}
+
+	@Override
+	public List<Student> getStudent(long teacher_id, long study_time_id) {
+		return studentDao.getStudent(teacher_id, study_time_id);
 	}
 	
 
